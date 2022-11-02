@@ -1,0 +1,35 @@
+//
+//  TodayView.swift
+//  State_Binding_EnvironmentObject_tutorial
+//
+//  Created by 양승은 on 2022/06/20.
+//
+
+import Foundation
+import SwiftUI
+
+struct TodayView: View {
+    
+    @Binding var count: Int
+//    init (count: Binding<Int> = .constant(99)){
+//        _count = count
+//    }
+    
+    var body: some View {
+        
+        VStack{
+            Text("내일도 행복한 코딩! \(count)")
+                .padding()
+            
+            Button(action: {
+                count = count + 1
+            }, label: {
+                Text("카운트 앱")
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.green)
+                    .cornerRadius(10.0)
+            })
+        }
+    }
+}
